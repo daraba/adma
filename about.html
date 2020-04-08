@@ -1,0 +1,110 @@
+---
+layout: adma
+title: ADMA consulting kft.
+keywords: elérhetőség
+description: ADMA
+img: aloe24.jpg
+h1.ref: ADMA
+h2: elérhetőség
+--- 
+<div id="content">
+	<div id="welcome" class="post">
+		<h2 class="title">Elérhetőség</h2>
+	
+		<div class="content">
+		<table>
+		<tr><td>
+		<div class="vcard">
+			<span class="fn org">ADMA Consulting Kft.</span> <br>
+				<div class="adr"> 
+				Cím: 
+				<span class="street-address">Tavasz str 8</span>, 
+				<span class="locality">Budapest</span>.
+				</div>   
+				<span class="geo">
+				<span class="latitude">
+					<span class="value-title" title="47.5401"></span>
+				</span>
+				<span class="longitude">
+					<span class="value-title" title="19.045"></span>
+				</span>
+				</span>
+			Fax: <span class="tel">00 36 1240-2559</span><br>
+			Telefon: <span class="tel">00 36 1244-8116</span><br>
+			Telefon: <span class="tel">00 36 1242-2489</span><br>
+			<a href="http://www.adma.hu/" class="url">Web</a> www.adma.hu 
+			<br>
+					<p>
+			Hívjon a következő linket használva közvetlenül okostelefonról:<a href="tel:+3617898683">Hívás</a><br>
+			</p>
+
+		<script type="text/javascript">
+			document.write(('e-mail: <span class="email">adma==adma.hu</span><br>' +
+			'<a href="mailto:adma==adma.hu">email küldés</a>').replace(/==/g,'@'));
+		</script>
+			
+		</div>
+		</td><td>
+			<div id="a_map" style="width:400px; height:300px" >a</div>
+		</td></tr>
+		</table>
+
+		<form id="msg" style="margin: 50px 0px">
+		<h2>Üzenet, kérdés</h2>
+		<br>
+		<table>
+		<tr><td>Az Ön e-mail címe:</td><td><input size="64" name="email" class="required email"
+			></td></tr>
+		<tr><td>Tárgy:</td><td><input size="64" name="subj" class="required"></td></tr>
+		<tr><td colspan="2"><textarea rows="5" cols="80" name="msg" class="required"> </textarea><br/><input type="submit" value="Elküld"></td></tr>
+		</table>
+		</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="assets/js/localization/messages_hu.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk_0TpHKkBg9FqYrHyBDkBVuMAiAPZmEg"></script>
+<script type="text/javascript">
+	$(function() {
+	$("#msg").validate({
+		submitHandler: function(evento) {
+			$("#m_form").hide();
+			$("#m_send").show();
+
+			$.ajax({
+				url: "question.php",
+				success: function() {
+					$("#msg input").val("");
+					$("#msg textarea").val("");
+					alert("E-mail küldés sikeres!");	
+				},
+				data: { email: $("#msg input:first").val(),
+						subj: $("#msg input:eq(1)").val(),
+						msg: $("#msg textarea").val()
+				}
+			});
+		} 
+		});
+		
+		var gc= new google.maps.Geocoder();
+		gc.geocode( { address: "1033 Budapest, Tavasz u. 8" }, function(res,stat) {
+			po=res[0].geometry.location ;	
+			var opt={ center: po,  mapTypeId: google.maps.MapTypeId.ROADMAP ,  zoom: 12	};
+			var  map = new google.maps.Map(document.getElementById("a_map"),opt);
+			var mopt={	map:map,	animation: google.maps.Animation.BOUNCE,	position: po	};
+			marker = new google.maps.Marker(mopt);
+		} ,st={});
+	})
+</script>
+
+<div id="sidebar">
+	<div id="menu">
+		<ul>
+			<li><a href="/" title="főoldal">Kezdőlap</a></li>
+			<li class="active"><p>Kapccsolat</p></li>
+		</ul>
+	</div>
+</div>
+<div style="clear: both;"></div>

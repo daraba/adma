@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" >
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object#">
+  <meta property="fb:app_id" content="290772667711408" /> 
+  <meta property="og:type"   content="object" /> 
+  <meta property="og:url"    content="http://www.adma.hu/facebook.html" /> 
+  <meta property="og:title"  content="Sample Object" /> 
+  <meta property="og:image"  content="http://www.adma.hu/images/check.jpg	" /> 
+  <meta property="fb:admins" content="100005086261945"/>
+ </head>
+ <body>
+<script>
+  window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : '290772667711408', // App ID from the App Dashboard
+      channelUrl : '//www.adma.hu/channel.html', // Channel File for x-domain communication
+      status     : true, // check the login status upon init?
+      cookie     : true, // set sessions cookies to allow your server to access the session?
+      xfbml      : true  // parse XFBML tags on this page?
+    });
+
+    // Additional initialization code such as adding Event Listeners goes here
+
+  };
+
+  // Load the SDK's source Asynchronously
+  // Note that the debug version is being actively developed and might 
+  // contain some type checks that are overly strict. 
+  // Please report such bugs using the bugs tool.
+  (function(d, debug){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document, /*debug*/ false));
+
+
+
+   
+function like() {
+   FB.api('/me/og.likes','post', { object: "http://samples.ogp.me/226075010839791" },
+  function(response) {
+    // handle the response
+  }
+);
+}
+
+function alertname() {
+FB.api('/me', function(response) {
+  alert('Your name is ' + response.name);
+});	
+}
+
+function have() { 
+		FB.api(  '/me/adma_hu:have','post', { object: "http://www.adma.hu/facebook.html" },
+  function(response) {
+  var s=JSON.stringify(response);
+    // handle the response
+  }
+);
+}
+
+function dialog() {
+FB.ui( {
+   method: 'feed',
+   name: 'The Facebook SDK for Javascript',
+   caption: 'Bringing Facebook to the desktop and mobile web',
+   description: (
+      'A small JavaScript library that allows you to harness ' +
+      'the power of Facebook, bringing the user\'s identity, ' +
+      'social graph and distribution power to your site.'
+   ),
+   link: 'https://developers.facebook.com/docs/reference/javascript/',
+   picture: 'http://www.fbrell.com/public/f8.jpg'
+  },
+  function(response) {
+    if (response && response.post_id) {
+	var s=JSON.stringify(response);
+      alert('Post was published.');
+    } else {
+      alert('Post was not published.');
+    }
+  }
+);
+}
+
+function loginstat() {
+FB.getLoginStatus(function(response) {
+  var s=JSON.stringify(response);
+  if (response.status === 'connected') {
+    // connected
+  } else if (response.status === 'not_authorized') {
+    // not_authorized
+  } else {
+    // not_logged_in
+  }
+ });
+}
+
+function login() {
+    FB.login(function(response) {
+  var s=JSON.stringify(response);
+        if (response.authResponse) {
+            // connected
+        } else {
+            // cancelled
+        }
+    },{scope: 'email,user_likes,publish_stream'});
+}
+</script>
+ <p>
+ jkjkkj
+</p>
+<button onclick="like(); alert('done');">Like</button>
+<button onclick="have();">Have</button>
+<button onclick="alertname();">Alert Name</button>
+<button onclick="dialog();">Dialog</button>
+<button onclick="login();">Login</button>
+<div id="fb-root"></div>
+ </body>
+ </html>

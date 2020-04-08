@@ -1,0 +1,326 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin-bottom: 50px;
+	background: #FFFFFF ; 
+	color: #3B3B3B; font-style:normal; font-variant:normal; font-weight:normal; font-size:13px; font-family: Verdana, Roboto, Helvetica, sans-serif
+}
+
+h1, h2, h3 {
+	color: #4F789F;
+	font-family: 'Segoe UI SemiLight',Roboto, Helvetica, Arial, sans-serif;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, blockquote, ul, ol {
+}
+
+p {
+}
+
+blockquote {
+}
+
+ul {
+}
+
+ul li {
+}
+
+ol {
+}
+
+ol li {
+}
+
+a {
+	color: #4F789F;
+}
+
+
+img {
+	border: 0px solid #3B3B3B;
+}
+
+img.left {
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+img.right {
+	float: right;
+	margin: 0 0 0 20px;
+}
+
+/* Boxed Style */
+
+.boxed {
+}
+
+.boxed .title {
+	padding: 10px 15px;
+	background: #3B3B3B;
+	text-transform: uppercase;
+	font: bold .77em ;
+	color: #FFFFFF;
+}
+
+.boxed .content {
+	padding: 15px;
+}
+
+.boxed ul {
+	list-style: none;
+}
+
+/* Post */
+
+.post {
+	clear: both;
+	padding: 20px;
+	border-bottom: 1px solid #3B3B3B;
+	
+}
+
+.post .title {
+}
+
+.post .content {
+	line-height: 1.6em;
+}
+
+.post .title {
+	margin-bottom: 20px;
+	font-family: 'Segoe UI Light',Roboto, Helvetica, Arial, sans-serif;
+}
+
+.post p, .post blockquote, .post ul, .post ol {
+	margin-bottom: 1em;
+}
+
+.post blockquote, .post ul, .post ol {
+	margin-left: 3em;
+}
+
+/* Header */
+
+#header {
+	width: 1000px;
+	height: 150px;
+	margin: 0 auto;
+	background: #69B10A url('images/pills.jpg');
+	
+
+}
+
+#header h1, #header h2 {
+	font-family: 'Segoe UI Light',Roboto, Helvetica, Arial, sans-serif;
+	color: black;
+}
+
+#header h1 {
+	float: left;
+	padding: 80px 0 0 20px;
+	letter-spacing: -3px;
+	font-size: 48px;
+	text-shadow: 1px 1px 4px #000;
+}
+
+#header h2 {
+	float: left;
+	padding: 96px 0 0 20px;
+	font-size: 32px;
+    text-shadow: 1px 1px 4px #ffffff;
+}
+
+#header a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+/* Page */
+
+#page {
+	width: 1000px;
+	margin: 0 auto;
+/*	background: url('images/img3.gif') ; */
+	border-top: 20px solid #3B3B3B;
+	border-right: 1px solid;
+	border-left: 1px solid;	
+	background-color: #cccccc;
+}
+
+#content {
+	float: right;
+	width: 800px;
+	padding-right: 1px;
+	border-left: 1px solid;
+	background-color: #ffffff;
+}
+
+#sidebar {
+	float: left;
+	width: 196px;
+	padding-left: 1px;
+}
+
+/* Menu */
+
+#menu { 	
+	font-family: 'Segoe UI',Roboto, Helvetica, Arial, sans-serif;
+}
+
+#menu li {
+	list-style: none; 
+}
+
+
+#menu ul li {
+	padding: 0px 10px;
+	background: #cccccc;
+}
+
+#menu ul li p {
+	padding: 10px 10px;
+}
+
+#menu a {
+	color: #3B3B3B;
+	display: block;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 10px 10px;
+}
+
+
+#menu .active a {
+	background: #BABABA;
+	color: #000000;
+	text-decoration: none;
+}
+
+#menu a:hover {
+	background: #4F789F;
+	color: #FFFFFF;
+}
+
+
+/* Login */
+
+#login {
+}
+
+#login fieldset {
+	border: none;
+}
+
+#login legend {
+	display: none;
+}
+
+#login input {
+	margin-bottom: 5px;
+}
+
+/* Updates */
+
+#updates {
+}
+
+#updates ul {
+}
+
+#updates li {
+	margin-bottom: 20px;
+}
+
+
+
+/* Footer */
+
+footer {
+	width: 982px;
+	height: 15px;
+	margin: 0 auto;
+	background: #3B3B3B;
+	font-size: .8em;
+	color: #FFFFFF;
+	padding: 10px 10px;
+	
+}
+
+#legal {
+	float: left;
+}
+
+#links {
+	float: right;
+}
+
+form label.error { color: red; display: block;
+}
+
+#sidebar input {
+	width: 160px;
+}
+
+
+@media (max-width: 1000px ) {
+	#header {
+		width:802px
+	}
+	#page {
+		width:800px
+	}
+	#footer {
+		width:782px
+	}
+	#sidebar {
+		width:196px
+	}
+	#content {
+		width:600px
+	}
+	#sidebar input {
+		width:160px
+	}
+}
+@media (max-width: 700px ) {
+	#header {
+		width:503px
+	}
+	#header h1 {
+		font-size: 32px;
+	}
+
+	#header h2 {
+		font-size: 24px;
+	}
+	#page {
+		width:500px
+	}
+	#footer {
+		width:482px
+	}
+	#sidebar {
+		width:149px
+	}
+	#content {
+		width:347px
+	}
+	#sidebar input {
+		width:90px
+	}
+}
+
